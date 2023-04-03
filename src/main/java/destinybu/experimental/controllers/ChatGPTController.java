@@ -16,7 +16,7 @@ public class ChatGPTController {
     private final ChatGPTService chatGPTService;
 
     @GetMapping("/test")
-    public String testAPI() {
+    public Object testAPI() {
         return chatGPTService.helloWorld();
     }
 
