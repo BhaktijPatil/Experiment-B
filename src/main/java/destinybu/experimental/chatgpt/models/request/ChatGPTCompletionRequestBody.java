@@ -1,4 +1,4 @@
-package destinybu.experimental.models;
+package destinybu.experimental.models.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,12 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 @Builder
-public class ChatGPTCompletionsRequestBody {
+public class ChatGPTCompletionRequestBody {
+
     private String prompt;
     @Builder.Default
     private String model = "text-davinci-003";
     @Builder.Default
     private Integer max_tokens = 2048;
-    @Builder.Default
-    private Integer temperature = 0;
+    private Integer temperature;
+
 }
