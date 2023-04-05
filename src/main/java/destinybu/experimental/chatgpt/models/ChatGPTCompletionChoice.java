@@ -1,4 +1,4 @@
-package destinybu.experimental.models;
+package destinybu.experimental.chatgpt.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

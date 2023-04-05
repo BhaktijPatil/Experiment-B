@@ -1,5 +1,6 @@
-package destinybu.experimental.models;
+package destinybu.experimental.chatgpt.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -10,6 +11,7 @@ import java.util.List;
 @Data
 public class ChatGPTAIModel extends ChatGPTCommonResponse {
 
+    @JsonIgnore
     @JsonProperty("owned_by")
     private String ownedBy;
 
@@ -19,6 +21,7 @@ public class ChatGPTAIModel extends ChatGPTCommonResponse {
     @JsonProperty("root")
     private String root;
 
+    @JsonIgnore
     @JsonProperty("parent")
     private String parent;
 

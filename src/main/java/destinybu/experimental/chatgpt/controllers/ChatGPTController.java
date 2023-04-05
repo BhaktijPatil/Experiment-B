@@ -1,8 +1,8 @@
 package destinybu.experimental.chatgpt.controllers;
 
+import destinybu.experimental.chatgpt.models.ChatGPTAIModelsResponse;
+import destinybu.experimental.chatgpt.models.ChatGPTCompletionChoice;
 import destinybu.experimental.chatgpt.services.ChatGPTService;
-import destinybu.experimental.models.ChatGPTCompletionChoice;
-import destinybu.experimental.models.response.ChatGPTAIModelsResponseBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,7 +29,7 @@ public class ChatGPTController {
     }
 
     @GetMapping("/models")
-    public ChatGPTAIModelsResponseBody getChatGPTModels() {
+    public ChatGPTAIModelsResponse getChatGPTModels() {
         return chatGPTService.getModels();
     }
 

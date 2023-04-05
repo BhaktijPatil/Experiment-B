@@ -1,4 +1,4 @@
-package destinybu.experimental.core.config;
+package destinybu.experimental.core.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

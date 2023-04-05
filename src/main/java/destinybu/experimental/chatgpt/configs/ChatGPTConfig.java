@@ -1,4 +1,4 @@
-package destinybu.experimental.chatgpt.config;
+package destinybu.experimental.chatgpt.configs;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

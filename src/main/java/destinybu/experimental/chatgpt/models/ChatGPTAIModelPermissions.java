@@ -1,5 +1,6 @@
-package destinybu.experimental.models;
+package destinybu.experimental.chatgpt.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,12 +27,15 @@ public class ChatGPTAIModelPermissions extends ChatGPTCommonResponse {
     @JsonProperty("allow_fine_tuning")
     private boolean allowFineTuning;
 
+    @JsonIgnore
     @JsonProperty("organization")
     private String organization;
 
+    @JsonIgnore
     @JsonProperty("group")
     private String group;
 
+    @JsonIgnore
     @JsonProperty("is_blocking")
     private boolean isBlocking;
 
