@@ -1,9 +1,10 @@
 package destinybu.experimental.chatgpt.services;
 
+import destinybu.experimental.chatgpt.constants.ChatGPTCompletionsAIModels;
 import destinybu.experimental.chatgpt.models.ChatGPTAIModelsResponse;
 import destinybu.experimental.chatgpt.models.ChatGPTCompletionResponse;
+import destinybu.experimental.chatgpt.models.request.ChatGPTCompletionRequestBody;
 import destinybu.experimental.core.services.RestTemplateService;
-import destinybu.experimental.models.request.ChatGPTCompletionRequestBody;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,15 +32,21 @@ public class ChatGPTService {
     }
 
     public String helloWorld() {
-        return getCompletion(HELLO_WORLD_PROMPT).getChoices().get(0).getText();
+        return getCompletion(HELLO_WORLD_PROMPT, ChatGPTCompletionsAIModels.TEXT_DAVINCI_003)
+                .getChoices()
+                .get(0)
+                .getText();
     }
 
     public ChatGPTAIModelsResponse getModels() {
         return restTemplateService.get(modelsURL, chatGptHttpHeaders, ChatGPTAIModelsResponse.class);
     }
 
-    public ChatGPTCompletionResponse getCompletion(String prompt) {
-        ChatGPTCompletionRequestBody requestBody = ChatGPTCompletionRequestBody.builder().prompt(prompt).build();
+    public ChatGPTCompletionResponse getCompletion(String prompt, String modelId) {
+        ChatGPTCompletionRequestBody requestBody = ChatGPTCompletionRequestBody.builder()
+                .prompt(prompt)
+                .modelId(modelId)
+                .build();
         return restTemplateService.post(completionsURL, requestBody, chatGptHttpHeaders, ChatGPTCompletionResponse.class);
     }
 

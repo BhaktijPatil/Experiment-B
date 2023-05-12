@@ -1,13 +1,11 @@
 package destinybu.experimental.chatgpt.controllers;
 
+import destinybu.experimental.chatgpt.constants.ChatGPTCompletionsAIModels;
 import destinybu.experimental.chatgpt.models.ChatGPTAIModelsResponse;
 import destinybu.experimental.chatgpt.models.ChatGPTCompletionChoice;
 import destinybu.experimental.chatgpt.services.ChatGPTService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,8 +22,12 @@ public class ChatGPTController {
     }
 
     @GetMapping("/completions/{prompt}")
-    public List<String> getCompletion(@PathVariable String prompt) {
-        return chatGPTService.getCompletion(prompt).getChoices().stream().map(ChatGPTCompletionChoice::getText).toList();
+    public List<String> getCompletion(@PathVariable String prompt, @RequestParam(required = false, defaultValue =
+            ChatGPTCompletionsAIModels.TEXT_DAVINCI_003) String modelId) {
+        return chatGPTService.getCompletion(prompt, modelId)
+                .getChoices()
+                .stream()
+                .map(ChatGPTCompletionChoice::getText).toList();
     }
 
     @GetMapping("/models")

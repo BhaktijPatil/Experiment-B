@@ -13,7 +13,7 @@ import java.util.List;
 public class SteamResponse {
 
     @JsonProperty("game_count")
-    private int gameCount;
+    private Integer gameCount;
 
     @JsonProperty("games")
     private List<PlayerOwnedGame> playerOwnedGames;
