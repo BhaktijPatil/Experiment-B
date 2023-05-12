@@ -19,8 +19,7 @@ public class ChatGPTCompletionRequestBody {
     private Object prompt; // can be string, array of strings, array of tokens, or array of token arrays
 
     @JsonProperty("suffix")
-    @Builder.Default
-    private String suffix = null;
+    private String suffix;
 
     @JsonProperty("max_tokens")
     @Builder.Default
@@ -43,16 +42,14 @@ public class ChatGPTCompletionRequestBody {
     private boolean isStream = false;
 
     @JsonProperty("logprobs")
-    @Builder.Default
-    private Integer logProbs = null;
+    private Integer logProbs;
 
     @JsonProperty("echo")
     @Builder.Default
     private boolean isEcho = false;
 
     @JsonProperty("stop")
-    @Builder.Default
-    private Object stopSequences = null;
+    private Object stopSequences;
 
     @JsonProperty("presence_penalty")
     @Builder.Default
