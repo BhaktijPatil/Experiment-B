@@ -3,11 +3,13 @@ package destinybu.experimental.chatgpt.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@NoArgsConstructor
 public class ChatGPTChatCompletionResponse extends ChatGPTCommonResponse {
 
     @JsonProperty("choices")

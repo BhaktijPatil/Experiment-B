@@ -20,7 +20,6 @@ public class SteamController {
         return steamService.getPlayerSummaries(steamID);
     }
 
-
     @GetMapping("/games")
     public SteamResponse getPlayerOwnedGames(@PathVariable String steamID) {
         return steamService.getPlayerOwnedGames(steamID);

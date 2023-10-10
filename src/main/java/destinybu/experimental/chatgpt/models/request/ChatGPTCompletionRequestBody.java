@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class ChatGPTCompletionRequestBody {
 
     @JsonProperty("model")
-    private String modelId;
+    private String modelID;
 
     @JsonProperty("prompt")
     private Object prompt; // can be string, array of strings, array of tokens, or array of token arrays
